@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[32,)"
+license="The Unlicense"
+
+[[mods]]
+    modId="tutorial"
+    version="${file.jarVersion}"
+    displayName="Tutorial Mod"
+    #updateJSONURL="http://myurl.me/" #optional
+    #displayURL="http://example.com/" #optional
+    #logoFile="examplemod.png" #optional
+    #credits="Thanks for this example mod goes to Java" #optional
+    #authors="Love, Cheese and small house plants" #optional
+    description='''
+    Tutorial mod by SilentChaos512
+
+    https://www.youtube.com/silentchaos512
+    '''
+
+[[dependencies.tutorial]]
+    modId="forge"
+    mandatory=true
+    versionRange="[32,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.tutorial]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.1]"
+    ordering="NONE"
+    side="BOTH"
