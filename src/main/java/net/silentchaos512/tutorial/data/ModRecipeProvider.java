@@ -15,26 +15,26 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void registerRecipes(Consumer<IFinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapelessRecipe(ModItems.SILVER_INGOT.get(), 9)
-                .addIngredient(ModBlocks.SILVER_BLOCK.get())
-                .addCriterion("has_item", hasItem(ModItems.SILVER_INGOT.get()))
-                .build(consumer);
+    protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(ModItems.SILVER_INGOT.get(), 9)
+                .requires(ModBlocks.SILVER_BLOCK.get())
+                .unlockedBy("has_item", has(ModItems.SILVER_INGOT.get()))
+                .save(consumer);
 
-        ShapedRecipeBuilder.shapedRecipe(ModBlocks.SILVER_BLOCK.get())
-                .key('#', ModItems.SILVER_INGOT.get())
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .addCriterion("has_item", hasItem(ModItems.SILVER_INGOT.get()))
-                .build(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.SILVER_BLOCK.get())
+                .define('#', ModItems.SILVER_INGOT.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_item", has(ModItems.SILVER_INGOT.get()))
+                .save(consumer);
 
-        CookingRecipeBuilder.smeltingRecipe(Ingredient.fromItems(ModBlocks.SILVER_ORE.get()), ModItems.SILVER_INGOT.get(), 0.7f, 200)
-                .addCriterion("has_item", hasItem(ModBlocks.SILVER_ORE.get()))
-                .build(consumer, modId("silver_ingot_smelting"));
-        CookingRecipeBuilder.blastingRecipe(Ingredient.fromItems(ModBlocks.SILVER_ORE.get()), ModItems.SILVER_INGOT.get(), 0.7f, 100)
-                .addCriterion("has_item", hasItem(ModBlocks.SILVER_ORE.get()))
-                .build(consumer, modId("silver_ingot_blasting"));
+        CookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.SILVER_ORE.get()), ModItems.SILVER_INGOT.get(), 0.7f, 200)
+                .unlockedBy("has_item", has(ModBlocks.SILVER_ORE.get()))
+                .save(consumer, modId("silver_ingot_smelting"));
+        CookingRecipeBuilder.blasting(Ingredient.of(ModBlocks.SILVER_ORE.get()), ModItems.SILVER_INGOT.get(), 0.7f, 100)
+                .unlockedBy("has_item", has(ModBlocks.SILVER_ORE.get()))
+                .save(consumer, modId("silver_ingot_blasting"));
     }
 
     private static ResourceLocation modId(String path) {
