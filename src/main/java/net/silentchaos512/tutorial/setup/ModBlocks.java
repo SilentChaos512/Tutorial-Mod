@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
+import net.silentchaos512.tutorial.block.metalpress.MetalPressBlock;
 
 import java.util.function.Supplier;
 
@@ -24,6 +25,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SILVER_BLOCK = register("silver_block", () ->
             new Block(AbstractBlock.Properties.of(Material.METAL)
                     .strength(3, 10)
+                    .sound(SoundType.METAL)));
+
+    public static final RegistryObject<MetalPressBlock> METAL_PRESS = register("metal_press", () ->
+            new MetalPressBlock(AbstractBlock.Properties.of(Material.METAL)
+                    .strength(4, 20)
                     .sound(SoundType.METAL)));
 
     static void register() {}
