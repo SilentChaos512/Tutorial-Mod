@@ -31,7 +31,7 @@ public class Registration {
         ModBlocks.register();
         ModContainerTypes.register();
         ModItems.register();
-        ModRecipeSerializers.register();
+        ModRecipes.register();
         ModTileEntityTypes.register();
     }
 
