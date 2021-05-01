@@ -9,7 +9,7 @@ import net.silentchaos512.tutorial.crafting.recipe.PressingRecipe;
 public final class ModRecipes {
     public static final class Types {
         public static final IRecipeType<PressingRecipe> PRESSING = IRecipeType.register(
-                TutorialMod.MOD_ID + "pressing");
+                TutorialMod.MOD_ID + ":pressing");
 
         private Types() {}
     }
