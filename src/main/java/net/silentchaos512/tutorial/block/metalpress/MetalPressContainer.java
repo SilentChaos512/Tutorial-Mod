@@ -38,7 +38,7 @@ public class MetalPressContainer extends Container {
                 int index = x + y * 9;
                 int posX = 8 + x * 18;
                 int posY = 84 + y * 18;
-                this.addSlot(new Slot(playerInventory, index, posX, posY));
+                this.addSlot(new Slot(playerInventory, index + 9, posX, posY));
             }
         }
 
