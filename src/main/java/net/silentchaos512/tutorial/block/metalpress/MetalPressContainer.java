@@ -35,10 +35,10 @@ public class MetalPressContainer extends Container {
         // Player backpack
         for (int y = 0; y < 3; ++y) {
             for (int x = 0; x < 9; ++x) {
-                int index = x + y * 9;
+                int index = 9 + x + y * 9;
                 int posX = 8 + x * 18;
                 int posY = 84 + y * 18;
-                this.addSlot(new Slot(playerInventory, index + 9, posX, posY));
+                this.addSlot(new Slot(playerInventory, index, posX, posY));
             }
         }
 
